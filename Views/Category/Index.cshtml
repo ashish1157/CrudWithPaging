@@ -1,0 +1,28 @@
+﻿@model List<WebApplication3105.Models.Category>
+
+    @{}
+<h1>
+    Categories
+</h1>
+
+<table class="table">
+    <thead class="table-striped">
+        <tr>
+            <th>Category Id</th>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var category in Model)
+        {
+            <tr>
+                <th>@category.CategoryId</th>
+                <th>@category.CategoryName</th>
+                @*<td>
+                    @Html.ActionLink("Show", "Detail","Category", new { id=category.CategoryId})
+                </td>*@
+            </tr>
+            
+        }
+    </tbody>
+</table>

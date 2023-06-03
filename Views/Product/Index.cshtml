@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@using X.PagedList.Mvc.Core;
+@using X.PagedList
+@model IPagedList<WebApplication3105.Models.ProductCategory>
+
+<h1 class="text-center text-uppercase">
+    List of products
+</h1>
+<a herf="">view</a>
+
+<table class="table table-striped table-bordered">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Category Id</th>
+            <th>Category Name</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+            <td>@data.product.ProductId</td>
+            <td>@data.product.ProductName</td>
+            <td>@data.product.CategoryId</td>
+            <td>@data.category.CategoryName</td>
+            <td>
+                    @Html.ActionLink("Show", "Show", new { id=data.product.ProductId })
+            </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div>
+
+   <div class="pagedList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+
+  
+</div>
+
+
+
