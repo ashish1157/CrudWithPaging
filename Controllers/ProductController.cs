@@ -22,7 +22,7 @@ namespace WebApplication3105.Controllers
         {
             List<Product> products = dbContext.Product.ToList();
             List<Category> categories = dbContext.Category.ToList();
-            int recordsPerPage = 3;
+            int recordsPerPage = 10;
 
 
             var data = from p in products
